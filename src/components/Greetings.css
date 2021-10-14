@@ -1,0 +1,14 @@
+.greetings {
+  border: 1px solid black;
+  margin-top: 10px;
+  padding-left: 10px;
+  height: 40px;
+  display: table;
+  width: 100%;
+}
+
+.greetings h3 {
+  margin: 0;
+  display: table-cell;
+  vertical-align: middle;
+}

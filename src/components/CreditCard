@@ -1,0 +1,52 @@
+import React from 'react';
+import './CreditCard.css';
+
+function CreditCard({
+  type,
+  number,
+  expirationMonth,
+  expirationYear,
+  bank,
+  owner,
+  bgColor,
+  color,
+}) {
+  return (
+    <div
+      className="credit-card"
+      style={{ backgroundColor: bgColor, color: color }}
+    >
+      {type === 'Visa' ? (
+        <img
+          src="../img/persons/visa.png"
+          alt="visa logo"
+          width="50px"
+          className="card-type"
+        />
+      ) : (
+        <img
+          src="../img/master-card.svg"
+          alt="master card logo"
+          width="50px"
+          className="card-type"
+        />
+      )}
+      <h3 className="card-number">**** **** **** {number.slice(12)}</h3>
+      <div className="card-info">
+        {expirationMonth < 10 ? (
+          <p className="expiration">
+            Expires 0{expirationMonth}/{expirationYear}
+          </p>
+        ) : (
+          <p className="expiration">
+            Expires {expirationMonth}/{expirationYear}
+          </p>
+        )}
+        <p>{bank}</p>
+      </div>
+      <p className="card-owner">{owner}</p>
+    </div>
+  );
+}
+
+export default CreditCard;
